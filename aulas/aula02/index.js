@@ -1,1 +1,1 @@
-console.log("API funcionando!");
+console.log("API FUNCIONANDO!")
