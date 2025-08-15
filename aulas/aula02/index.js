@@ -1,1 +1,1 @@
-console.log("API FUNCIONANDO!")
+console.log("API está no ar!")
