@@ -1,1 +1,2 @@
-console.log("API está no ar!")
+console.log("API está on!");
+console.log("API está off!");
