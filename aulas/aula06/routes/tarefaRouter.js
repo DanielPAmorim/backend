@@ -6,11 +6,11 @@ router.get('/', controller.listarTarefas);
 
 router.post('/', controller.criarTarefas);
 
-router.get("/:id", controller.listarTarefasId);
+router.get("/:id", controller.buscarTarefa, controller.obterTarefa);
 
-router.put("/:id", controller.alterarTarefas);
+router.put("/:id", controller.buscarTarefa, controller.atualizarTarefas);
 
-router.delete("/:id", controller.deletarTarefas );
+router.delete("/:id", controller.buscarTarefa, controller.removerTarefas );
 
 
 module.exports = router;
