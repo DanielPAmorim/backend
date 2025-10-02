@@ -1,19 +1,31 @@
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 
-//const indexRouter = require('./routes/index');
-const tarefaRouter = require("./routes/tarefaRouter")
+var express = require('express');
 
-const app = express();
+var tarefaRouter = require('./routes/tarefaRouter');
 
-app.use(logger('dev'));
+var app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
-//app.use('/', indexRouter);
-app.use("/tarefas", tarefaRouter);
+app.use('/tarefas', tarefaRouter);
+
+
+
+
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  res.status(err.status || 500);
+  res.render('error');
+});
 
 module.exports = app;
