@@ -1,0 +1,14 @@
+db.usuarios.find({nome: "Maria"})
+db.usuarios.updateOne({nome:"Maria"},{ $set: {telefone:"88888-8888"}})
+db.usuarios.updateOne({nome:"Maria"},{ $set: {telefone:"88888-8888"})
+db.usuarios.find({nome: "Maria"})
+db.usuarios.find({})
+db.usuarios.insertOne({ nome: "Maria", email: "maria@i.br", telefone: "99999-9999"})
+db.usuarios.insertOne({ nome: "Maria", email: maria@iesb.br", telefone: "99999-9999"})
+db.usuarios.insertOne({ nome: "Maria", email: maria@i.br", telefone: "99999-9999"})
+db.usuarios.find({})
+db.usuarios.insertOne({ nome: "Daniel", email: "daniel.p.amorim@iesb.edu.br"})
+show collections
+use mebanco
+use local
+show dbs

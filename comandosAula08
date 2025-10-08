@@ -1,0 +1,51 @@
+mongodb
+
+usuario Daniel
+senha $enha123
+
+dentro da pasta
+  npm init -y
+
+  npm install mongodb
+
+Arquivo database.js
+
+  objeto cliente do mongodb
+  const { MongoClient } = require("mongodb");
+
+  string de conexão
+  const url = "url gerada no site do mongodb atlas";
+
+
+  const client = new MongoClient(url);
+
+  async function conecta(){
+    try{
+        await client.connect();
+        return client.db("agenda");
+    }catch(e){
+        console.log("Erro ao conectar no MongoDB", e.message);
+    }
+  }
+
+  module.exports = conecta;
+
+Criar arquivo index.js
+  const conecta = require ("./database"); 
+  const db = await conecta();
+
+  async function inserir() {
+    
+  const collection = await db.collection('tarefas');
+
+  const resultado = await collection.insertOne({
+    nome: "Estudar MongoDB", concluida: false});
+
+  console.log(resultado);
+  };  
+
+packege.json
+  trocar test para node index.js
+
+instalar readline-sync
+  npm install readline-sync
