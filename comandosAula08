@@ -44,8 +44,10 @@ Criar arquivo index.js
   console.log(resultado);
   };  
 
-packege.json
+package.json
   trocar test para node index.js
+
 
 instalar readline-sync
   npm install readline-sync
+
